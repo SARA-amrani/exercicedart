@@ -83,6 +83,19 @@ void main() {
   print('Bibliothèque fusionnée:');
   displayBooks(mergedLibrary.getAvailableBooks());
 
+
+  // Création d'un employé et d'un manager
+  Employe employe = Employe(nom: 'Alice', salaire: 3000);
+  Manager manager = Manager(nom: 'Bob', salaire: 5000, prime: 1500);
+
+  // Stockage dans une liste
+  List<Employe> equipe = [employe, manager];
+
+  // Parcours de la liste et affichage des infos
+  for (var employe in equipe) {
+    employe.afficherInfos();
+  }
+
 }
 
 // Programmation orientée objet
@@ -99,7 +112,7 @@ class Employe {
     print('Nom: $_nom, Salaire: $_salaire');
   }
 }
-
+// Création de la sous-classe Manager :
 class Manager extends Employe {
   double _prime;
 
