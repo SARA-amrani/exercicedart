@@ -83,7 +83,6 @@ void main() {
   print('Bibliothèque fusionnée:');
   displayBooks(mergedLibrary.getAvailableBooks());
 
-
   // Création d'un employé et d'un manager
   Employe employe = Employe(nom: 'Alice', salaire: 3000);
   Manager manager = Manager(nom: 'Bob', salaire: 5000, prime: 1500);
@@ -97,14 +96,12 @@ void main() {
   }
 
   void main() async {
-  print('loading ...');
-  
-  String result = await fetchData();
-  
-  print(result);
-}
+    print('loading ...');
 
+    String result = await fetchData();
 
+    print(result);
+  }
 }
 
 // Programmation orientée objet
@@ -114,20 +111,22 @@ class Employe {
   String _nom;
   double _salaire;
 
-  Employe({required String nom, required double salaire}) 
-      : _nom = nom, _salaire = salaire;
+  Employe({required String nom, required double salaire})
+    : _nom = nom,
+      _salaire = salaire;
 
   void afficherInfos() {
     print('Nom: $_nom, Salaire: $_salaire');
   }
 }
+
 // Création de la sous-classe Manager :
 class Manager extends Employe {
   double _prime;
 
   Manager({required String nom, required double salaire, required double prime})
-      : _prime = prime,
-        super(nom: nom, salaire: salaire);
+    : _prime = prime,
+      super(nom: nom, salaire: salaire);
 
   @override
   void afficherInfos() {
@@ -136,8 +135,7 @@ class Manager extends Employe {
   }
 }
 
-// Programmation asynchrone avec Future 
-
+// Programmation asynchrone avec Future
 
 //Simuler une requête API avec Future.delayed :
 Future<String> fetchData() async {
