@@ -50,4 +50,13 @@ void displayBooks(List<Book> books) {
     print('Titre: ${book.title}, Auteur: ${book.author} (Année: ${book.year})');
   }
 }
+//Surcharge de l'opérateur + :
+extension LibraryOperator on Library {
+  Library operator +(Library other) {
+    Library newLibrary = Library();
+    newLibrary.books.addAll(this.books);
+    newLibrary.books.addAll(other.books);
+    return newLibrary;
+  }
+}
 
