@@ -96,6 +96,15 @@ void main() {
     employe.afficherInfos();
   }
 
+  void main() async {
+  print('loading ...');
+  
+  String result = await fetchData();
+  
+  print(result);
+}
+
+
 }
 
 // Programmation orientée objet
@@ -127,3 +136,12 @@ class Manager extends Employe {
   }
 }
 
+// Programmation asynchrone avec Future 
+
+
+//Simuler une requête API avec Future.delayed :
+Future<String> fetchData() async {
+  return await Future.delayed(Duration(seconds: 2), () {
+    return 'Données reçues';
+  });
+}
